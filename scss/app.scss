@@ -1,0 +1,280 @@
+@use 'button.scss';
+
+$border-sm: 7px;
+$shadow-sm:  5px 5px 5px 5px rgb(37, 36, 36);
+*{
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: {
+        color: #096398;
+        position: center;
+        size: cover;
+        repeat: no-repeat;
+    };
+}
+nav{
+    position: relative;
+    background: transparent;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    margin-left: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img img{
+    width: 50px;
+}
+a.title{
+    
+    color: white;
+    font-size: 18px;
+    line-height: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+a.title:hover{
+    border-bottom: none;
+    color: #fff;
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    padding: 15px;
+}
+nav ul li a{
+    line-height: 80px;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 3px;
+    text-transform: capitalize;
+    padding: 5px;   
+}
+a.active, a:hover{
+    border-bottom: 1px solid #FBAC2C;
+    color: #FBAC2C;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+    right: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    display: none;  
+}
+input{
+    display: none;
+}
+@media (max-width:852px){
+    label.logo{
+        font-size: 30px;
+        padding{
+            left: 50px;
+        };
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+        
+    }
+    body{
+        background{
+            color: #096398;
+        };
+    }
+    ul{
+        position: absolute;
+        width: 100%;
+        top: 80px;
+        left: 50%;
+        text-align: center;
+        flex-direction: column;
+        transition:  all .5s;
+
+    }
+    nav ul li {
+        display: block;
+        /* margin: 50px 0; */
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    a:hover, a.active{
+        background: none;
+        color: yellowgreen;
+    }
+    input[type="checkbox"] ~ul li{
+        position: relative;
+        left: -100%;
+        
+
+    }
+    input:checked[type="checkbox"] ~ ul li{
+        left: 0;
+    }
+    
+}
+main section{
+    width: 25%;
+    margin: 70px 140px 40px;
+    padding: 30px;
+}
+main section h1{
+    color: #fff;
+    font-size: 60px;
+    text-transform: capitalize;
+    font-family: 'Titan One', cursive;
+    letter-spacing: 3px;
+}
+span{
+    font-size: 80px;
+}
+main section p{
+    padding-top: 20px;
+    color: rgb(224, 221, 221);;
+    font-weight: lighter;
+    
+}
+.orderbtn{
+    @include button.button();
+}
+
+@media (max-width:800px){
+    main section{
+        width: 100%;
+        margin: 0{
+            top: 400px;
+        };
+        position: absolute;
+        z-index: 1;
+    }
+}
+
+.circles{
+    color: rgb(235, 230, 230);
+    
+    
+}
+.yellowpart{
+    width: 50%;
+    background-color: #FBAC2C;
+    height: 50vh;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-top-left-radius: 60%;
+    box-shadow:$shadow-sm;
+}
+@media (max-width:860px){
+    .yellowpart{
+        width: 50%;
+        transition: .5s;
+        bottom: -600px;
+        right: 0;   
+    }
+}
+.imgyellow{
+    width: 50%;
+    position: absolute;
+    bottom: 30px;
+    box-shadow: 0 5px rgb(0 0 0 / 2%);
+}
+.sale{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(22, 21, 21);
+    border-radius: 50%;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -30%);
+    cursor: pointer;
+    box-shadow: 2px 5px 5px rgb(0 0 0 / 50%);
+    padding: 15px;
+}
+.sale h2{
+    color: rgb(226, 223, 223);
+    margin: 15px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+ .sale h2 {
+    color: rgb(226, 223, 223);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 36px;
+}
+@media (max-width:860px){
+    .sale{
+        top: 900px;
+        width: 150px;
+        height: 150px;
+
+    }
+    .sale br{
+        text-align: center;
+    }
+}
+.sale1{
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border: 1px dashed rgb(194, 191, 191);
+    border-radius: 50%;
+    top: 50.7%;
+    left: 75%;
+    transform: translate(-50%, -30%);
+    white-space: pre-line;
+    cursor: pointer;
+
+}
+@media (max-width:860px){
+    .sale1{
+        top: 905px;
+        width: 130px;
+        height: 130px; 
+    }
+}
+.spots .sp{
+   width: 50%;
+   position: absolute;
+   left: -10%;
+   top: -40%;
+   opacity: 0.1;
+
+}
+.yellowspots .yesp{
+   width: 30%;
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   opacity: 0.1;
+
+}
+@media (max-width:860px){
+    .yellowspots .yesp{
+        display: none;
+    }
+}
